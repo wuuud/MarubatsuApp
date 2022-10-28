@@ -36,7 +36,6 @@ class QuestionViewController: UIViewController {
             showAlert(message:  "登録完了")
             questionMakeText.text = ""
             print(questions)
-            
         } else {
             showAlert(message: "問題文を入力してください")
         }
@@ -62,9 +61,7 @@ class QuestionViewController: UIViewController {
         if userDefaults.object(forKey: "questions") != nil{
             questions = userDefaults.object(forKey: "questions") as! [[String: Any]]
         }
-        
     }
-    
     //テキストフィールドに最初からフォーカスが表示される
     override func viewWillAppear(_ animated: Bool) {
         questionMakeText.becomeFirstResponder()

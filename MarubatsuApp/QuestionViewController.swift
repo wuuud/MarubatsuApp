@@ -30,7 +30,9 @@ class QuestionViewController: UIViewController {
             default:
                 boolAnswer = false
             }
-            questions = userDefaults.object(forKey: "questions") as! [[String: Any]]
+            if userDefaults.object(forKey: "questions") != nil{
+                questions = userDefaults.object(forKey: "questions") as! [[String: Any]]
+            }
             questions.append(["question": questionMakeText.text!, "answer": boolAnswer])
             userDefaults.set(questions, forKey: "questions")
             showAlert(message:  "登録完了")
